@@ -4,21 +4,21 @@ constexpr int N_ELEMENTS = 100;
 
 int main()
 {
-    int *b = new int[NELEMENTS]; //helyesen N_ELEMENTS
-    std::cout << '1-100 ertekek duplazasa' //'' helyett "", nincs ;
-    for (int i = 0;) //paraméter hiány
+    int *b = new int[N_ELEMENTS]; 
+    std::cout << "1-100 ertekek duplazasa";
+    for (int i = 0; i<N_ELEMENTS; i++) 
     {
-        b[i] = i * 2; //így benne van a 0 is
+        b[i] = (i+1) * 2; 
     }
-    for (int i = 0; i; i++) //2. paraméter hibás
+    for (int i = 0; i<N_ELEMENTS; i++) 
     {
-        std::cout << "Ertek:" //meg kell adni melyik értéket jelenítse meg, hiányzik a ;
+        std::cout << "Ertek:" <<b[i] << std::endl;
     }    
     std::cout << "Atlag szamitasa: " << std::endl;
-    int atlag; //pontatlan érték
-    for (int i = 0; i < N_ELEMENTS, i++) //',' helyett ";"
+    int atlag = 0;
+    for (int i = 0; i < N_ELEMENTS; i++) 
     {
-        atlag += b[i] //nincs ;
+        atlag += b[i];
     }
     atlag /= N_ELEMENTS;
     std::cout << "Atlag: " << atlag << std::endl;
